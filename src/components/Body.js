@@ -27,11 +27,7 @@ const Body = () => {
         "https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
       const json = await data.json();
-      const data1 = await await fetch(
-        "https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/update"
-      );
-      const json1 = await data1.json();
-      console.log("Body-api-res:",json1);
+    
       setSection1Data
         (json.data.cards[0].card.card.imageGridCards.info
       );
@@ -51,7 +47,7 @@ const Body = () => {
     
   };
 
-  const { loggedInUser, setUserName } = useContext(UserContext);
+  //const { loggedInUser, setUserName } = useContext(UserContext);
 
   
   return !listOfRestaurants || listOfRestaurants.length === 0 ? (
@@ -100,16 +96,8 @@ const Body = () => {
             Top Rated Restaurants
           </button>
         </div>
-        <div className="search m-4 p-4 flex items-center">
-          <label>UserName : </label>
-          <input
-            className="border border-black p-2"
-            value={loggedInUser}
-            onChange={(e) => setUserName(e.target.value)}
-          />
-        </div>
       </div>
-      <div className="w-10/12 mx-auto flex flex-wrap">
+      <div className="w-full mx-auto flex flex-wrap justify-evenly">
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant?.info.id}
