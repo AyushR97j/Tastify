@@ -15,7 +15,6 @@ const Header = () => {
   //console.log(cartItems);
 
   return (
-    <div className=''>
       <div className="h-20 mx-auto px-40 flex justify-between shadow-lg">
       <div className="logo-container">
         <img className="w-24 ml-8" src={LOGO_URL} />
@@ -50,7 +49,6 @@ const Header = () => {
 
         </ul>
       </div>
-    </div>
     </div>
     
   );
