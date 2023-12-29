@@ -2,7 +2,6 @@ import RestaurantCard, { withPromtedLabel } from "./RestaurantCard";
 import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import Section1 from "./HomePage/Section1";
 
@@ -28,7 +27,11 @@ const Body = () => {
         "https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
       const json = await data.json();
-      //console.log("Body-api-res:",json);
+      const data1 = await await fetch(
+        "https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/update"
+      );
+      const json1 = await data1.json();
+      console.log("Body-api-res:",json1);
       setSection1Data
         (json.data.cards[0].card.card.imageGridCards.info
       );
@@ -47,14 +50,6 @@ const Body = () => {
     }
     
   };
-  const onlineStatus = useOnlineStatus();
-
-  if (onlineStatus === false)
-    return (
-      <h1>
-        Looks like you're offline!! Please check your internet connection;
-      </h1>
-    );
 
   const { loggedInUser, setUserName } = useContext(UserContext);
 

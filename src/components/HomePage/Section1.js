@@ -3,7 +3,6 @@ import { SECTION1DATA_IMAGE_BASE_URL } from '../../utils/constants';
 
 const Section1 = ({prop}) => {
 
-  const datas = ["Biryani","Kheer","Biryani","Kheer","Biryani","Kheer","Biryani","Kheer","Biryani","Kheer"];
   const scrollContRef = React.useRef();
  //console.log("propData",prop[0]?.action?.text);
   
@@ -11,13 +10,13 @@ const Section1 = ({prop}) => {
   const leftScroll = () => {
     const scrollCont = scrollContRef.current;
     //console.log("vhvh",scrollCont)
-    let width = scrollCont.clientWidth/3*5;
+    let width = scrollCont.clientWidth/3;
     
     scrollCont.scrollLeft -= width;
   }
   const rightScroll = () => {
     const scrollCont = scrollContRef.current;
-    let width = scrollCont.clientWidth/3*5;
+    let width = scrollCont.clientWidth/3;
     //console.log(width)
     scrollCont.scrollLeft += width;
   }
