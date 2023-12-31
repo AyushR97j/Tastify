@@ -1,8 +1,9 @@
-import { LOGO_URL } from "../utils/constants";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import Tastify from "../assets/Tastify.png";
+import { BsCart4 } from "react-icons/bs";
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
@@ -17,27 +18,32 @@ const Header = () => {
   return (
       <div className="h-20 mx-auto px-40 flex justify-between shadow-lg">
       <div className="logo-container">
-        <img className="w-24 ml-8" src={LOGO_URL} />
+        <img className="w-20 h-20 ml-8 bg-black" alt="logo" src={Tastify}></img>
       </div>
       <div className="flex items-center">
         <ul className="flex p-4 m-4 text-[18px] font-medium">
-          <li className="px-4">
+          <li className="px-4 hover:scale-110 transition-transform duration-300 ease-in-out">
             <Link to="/">Home</Link>
           </li>
-          <li className="px-4">
+          {/* <li className="px-4">
             <Link to="/about">About Us</Link>
-          </li>
-          <li className="px-4">
+          </li> */}
+          {/* <li className="px-4">
             <Link to="/contact">Contact Us</Link>
-          </li>
-          <li className="px-4">
+          </li> */}
+          <li className="px-4 hover:scale-110 transition-transform duration-300 ease-in-out">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li className="px-4">
-            <Link to="/cart">Cart - ({cartItems.length} items)</Link>
+          <li className="px-4 relative mr-8 my-auto hover:scale-110 transition-transform duration-300 ease-in-out">
+            <Link to="/cart">
+              <BsCart4 />
+              <span className="text-[0.5rem] text-center absolute bg-red-200 rounded-full w-5 h-5 top-[-10] left-8">
+                {cartItems.length}
+              </span>
+            </Link>
           </li>
           <button
-            className="login"
+            className="login hover:scale-110 transition-transform duration-300 ease-in-out"
             onClick={() => {
               btnNameReact === "Login"
                 ? setBtnNameReact("Logout")

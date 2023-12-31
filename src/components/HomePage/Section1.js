@@ -28,8 +28,8 @@ const Section1 = ({prop}) => {
         <div className='w-full mx-auto font-bold flex justify-between'>
             <div className='text-xl ml-0'>What's in you Heart ?</div>
             <div className='flex gap-4 mr-12'>
-                <button className='rounded-full h-8 w-8 bg-gray-300 flex justify-center items-center' onClick={leftScroll}><IoIosArrowRoundBack /></button>
-                <button className="rounded-full h-8 w-8 bg-gray-300 flex justify-center items-center" onClick={rightScroll}><IoIosArrowRoundForward /></button>
+                <button className='rounded-full h-8 w-8 bg-gray-200 flex justify-center items-center hover:bg-gray-300' onClick={leftScroll}><IoIosArrowRoundBack /></button>
+                <button className="rounded-full h-8 w-8 bg-gray-200 flex justify-center items-center hover:bg-gray-300" onClick={rightScroll}><IoIosArrowRoundForward /></button>
             </div>
         </div>
         <div className=' w-full mx-auto mb-2 flex gap-6 scroll-smooth overflow-x-hidden' ref={scrollContRef}>

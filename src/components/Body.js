@@ -97,7 +97,7 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="w-full mx-auto flex flex-wrap justify-evenly">
+      <div className="w-full mx-auto flex flex-wrap ml-20">
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant?.info.id}
